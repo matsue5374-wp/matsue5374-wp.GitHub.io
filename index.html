@@ -52,7 +52,6 @@
         <div class="accordion-inner">
           <div id="help">
             <h2>目的</h2>
-            <h2>使い方</h2>
             
             <div data-role="page" id="mainPage">
                 <div role="main" class="ui-content">
@@ -98,15 +97,6 @@
                             </optgroup>
                         </select>
 
-                        <!-- ◇<a id="btnHelp" href="http://www.codeforsapporo.org/papamama/" target="_blank" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a> -->
-                        <a id="btnHelp" href="http://www.codeforsapporo.org/papamama/" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
-                        
-                        <!--
-                        <a id="btnHelp" href="#helpDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
-                        -->
-                        
-                        <div class="divlink"><a href="http://www1.city.matsue.shimane.jp/kyouiku/hoiku/hoyoukodomo/hoikusho/H30nyusyokanouwaku.html" 
-                        target="_blank" class="headlink">平成30年度募集枠</a></div>
                     </fieldset>
                 </div>
                 <div id="map" class="map">
@@ -117,90 +107,9 @@
                     <div id="popup-content" role="main"></div>
                 </div>
             </div>
-            <div data-role="popup" data-history="false" id="filterdialog" data-theme="a" class="ui-corner-all ui-icon-delete ui-btn-left">
-                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                <form>
-                    <div style="padding:10px 20px;">
-                        <h3>保育施設 絞り込み</h3>
-                        <legend>【認可保育園】</legend>
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <label for="ninkaOpenTime" class="select">開園</label>
-                            <select id="ninkaOpenTime" class="filtersb">
-                                <option value="">開園</option>
-                                <option value="700">7:00</option>
-                                <option value="715">7:15</option>
-                                <option value="720">7:20</option>
-                                <option value="730">7:30</option>
-                                <option value="1100">11:00</option>
-                            </select>
-                            <label for="ninkaCloseTime" class="select">終園</label>
-                            <select id="ninkaCloseTime" class="filtersb">
-                                <option value="">終園</option>
-                                <option value="18">18:00以降</option>
-                                <option value="19">19:00以降</option>
-                                <option value="20">20:00以降</option>
-                                <option value="22">22:00以降</option>
-                                <option value="24">00:00</option>
-                            </select>
-                        </fieldset>
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <label for="ninkaIchijiHoiku">一時保育</label>
-                            <input type="checkbox" id="ninkaIchijiHoiku" class="filtercb">
-                            <label for="ninkaYakan">夜間</label>
-                            <input type="checkbox" id="ninkaYakan" class="filtercb">
-                            <label for="ninkaKyujitu">休日</label>
-                            <input type="checkbox" id="ninkaKyujitu" class="filtercb">
-                        </fieldset>
-                        
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <label for="ninkaShugaku">就学前まで</label>
-                            <input type="checkbox" id="ninkaShugaku" class="filtercb">
-                            
-                        </fieldset>
-                        
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <label for="ninkaVacancy">　空きあり　</label>
-                            <input type="checkbox" id="ninkaVacancy" class="filtercb">
-                        </fieldset>
-                        <legend><br>【認可外保育園】</legend>
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <label for="ninkagaiOpenTime" class="select">開園</label>
-                            <select id="ninkagaiOpenTime" class="filtersb">
-                                <option value="">開園</option>
-                                <!--<option value="7:00">7:00</option>
-                                <option value="7:30">7:30以前</option>
-                                <option value="7:45">7:45以前</option>
-                                <option value="8:00">8:00以前</option>
-                                -->
-                                <option value="8:00">8:00</option>
-                            </select>
-                            <label for="ninkagaiCloseTime" class="select">終園</label>
-                            <select id="ninkagaiCloseTime" class="filtersb">
-                                <option value="">終園</option>
-                                <option value="18">18:00以降</option>
-                                <option value="19">19:00以降</option>
-                                <option value="20">20:00以降</option>
-                                <option value="22">22:00以降</option>
-                                <option value="27">03:00</option>
-                            </select>
-                            <label for="ninkagai24H">24時間</label>
-                            <input type="checkbox" id="ninkagai24H" class="filtercb">
-                        </fieldset>
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <!-- <label for="ninkagaiShomei">証明書あり</label>
-                        <input type="checkbox" id="ninkagaiShomei" class="filtercb"> -->
-                        
-                        <!-- <label for="ninkagaiShugaku">就学前まで</label>
-                        <input type="checkbox" id="ninkagaiShugaku" class="filtercb"> -->
-                        
-                        </fieldset>
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <a href="#" data-rel="back" id="filterApply" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-check">条件適用</a>
-                            <a href="#" id="filterReset" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-delete">リセット</a>
-                        </fieldset>
-                    </div>
-                </form>
-            </div>
+            
+
+            
             <div data-role="popup" data-history="false" id="helpDialog" data-theme="a" class="ui-corner-all ui-icon-delete ui-btn-left">
                 <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                 <div style="padding:10px 20px;">
