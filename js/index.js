@@ -204,50 +204,6 @@ $('#mainPage').on('pageshow', function() {
 		drawMarker(pos, label);
 	});
 
-	// 幼稚園チェックボックスのイベント設定
-	$('#cbKindergarten').click(function() {
-		papamamap.switchLayer(this.id, $(this).prop('checked'));
-	});
-
-	// 認可保育所チェックボックスのイベント設定
-	$('#cbNinka').click(function() {
-		papamamap.switchLayer(this.id, $(this).prop('checked'));
-	});
-
-	// 認可外保育所チェックボックスのイベント設定
-	$('#cbNinkagai').click(function() {
-		papamamap.switchLayer(this.id, $(this).prop('checked'));
-	});
-
-	// 中学校区チェックボックスのイベント定義
-	$('#cbMiddleSchool').click(function() {
-		layer = map.getLayers().item(1);
-		layer.setVisible($(this).prop('checked'));
-	});
-
-	// 小学校区チェックボックスのイベント定義
-	$('#cbElementarySchool').click(function() {
-		layer = map.getLayers().item(2);
-		layer.setVisible($(this).prop('checked'));
-	});
-
-	// 現在地に移動するボタンのイベント定義
-	$('#moveCurrentLocation').click(function(evt){
-		control = new MoveCurrentLocationControl();
-		control.getCurrentPosition(
-			function(pos) {
-				var coordinate = ol.proj.transform(
-					[pos.coords.longitude, pos.coords.latitude], 'EPSG:4326', 'EPSG:3857');
-				view = map.getView();
-				view.setCenter(coordinate);
-				drawMarker(coordinate, "現在地");
-			},
-			function(err) {
-				alert('位置情報が取得できませんでした。');
-			}
-		);
-	});
-
 	// 半径セレクトボックスのイベント定義
 	$('#changeCircleRadius').change(function(evt){
 		radius = $(this).val();
