@@ -1,0 +1,23 @@
+﻿{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+
+"features": [
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "八雲中学校", "address": "八雲町西岩坂９３１番地", "x": 133.0880012, "y": 35.4029481, "label": "八雲中" }, "geometry": { "type": "Point", "coordinates": [ 133.0880012, 35.4029481 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "八束中学校", "address": "八束町波入１９７５番地", "x": 133.1746534, "y": 35.4953036, "label": "八束中" }, "geometry": { "type": "Point", "coordinates": [ 133.1746534, 35.4953036 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "本庄中学校", "address": "野原町４２４番地２", "x": 133.1357617, "y": 35.5154664, "label": "本庄中" }, "geometry": { "type": "Point", "coordinates": [ 133.1357617, 35.5154664 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "美保関中学校", "address": "美保関町下宇部尾５５４番地", "x": 133.1641661, "y": 35.5345043, "label": "美保関中" }, "geometry": { "type": "Point", "coordinates": [ 133.1641661, 35.5345043 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "島根中学校", "address": "島根町加賀１４２６番地", "x": 133.0662525, "y": 35.5650874, "label": "島根中" }, "geometry": { "type": "Point", "coordinates": [ 133.0662525, 35.5650874 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "第一中学校", "address": "外中原町４６番地", "x": 133.0416172, "y": 35.4710284, "label": "第一中" }, "geometry": { "type": "Point", "coordinates": [ 133.0416172, 35.4710284 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "第二中学校", "address": "西川津町３４０２番地１", "x": 133.0785551, "y": 35.4793952, "label": "第二中" }, "geometry": { "type": "Point", "coordinates": [ 133.0785551, 35.4793952 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "第三中学校", "address": "東朝日町１４番地", "x": 133.0700623, "y": 35.4618636, "label": "第三中" }, "geometry": { "type": "Point", "coordinates": [ 133.0700623, 35.4618636 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "第四中学校", "address": "西津田十丁目２０番１号", "x": 133.0771704, "y": 35.4510232, "label": "第四中" }, "geometry": { "type": "Point", "coordinates": [ 133.0771704, 35.4510232 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "湖南中学校", "address": "浜乃木八丁目２番６０号", "x": 133.0583086, "y": 35.4350554, "label": "湖南中" }, "geometry": { "type": "Point", "coordinates": [ 133.0583086, 35.4350554 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "湖東中学校", "address": "山代町６８０番地", "x": 133.0902367, "y": 35.4415021, "label": "湖東中" }, "geometry": { "type": "Point", "coordinates": [ 133.0902367, 35.4415021 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "鹿島中学校", "address": "鹿島町名分６７３番地", "x": 133.0104553, "y": 35.5185162, "label": "鹿島中" }, "geometry": { "type": "Point", "coordinates": [ 133.0104553, 35.5185162 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "玉湯中学校", "address": "玉湯町湯町７１７番地", "x": 133.0052699, "y": 35.4272908, "label": "玉湯中" }, "geometry": { "type": "Point", "coordinates": [ 133.0052699, 35.4272908 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "宍道中学校", "address": "宍道町宍道３５１番地", "x": 132.9178756, "y": 35.4104163, "label": "宍道中" }, "geometry": { "type": "Point", "coordinates": [ 132.9178756, 35.4104163 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "東出雲中学校", "address": "東出雲町揖屋１２５１番地", "x": 133.1496950, "y": 35.4245516, "label": "東出雲中" }, "geometry": { "type": "Point", "coordinates": [ 133.1496950, 35.4245516 ] } },
+{ "type": "Feature", "properties": { "A32_001": 32201, "A32_002": "松江市立", "A32_003": "湖北中学校", "address": "打出町２４５番地１", "x": 132.9832845, "y": 35.4798839, "label": "湖北中" }, "geometry": { "type": "Point", "coordinates": [ 132.9832845, 35.4798839 ] } }
+]
+}
