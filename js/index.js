@@ -95,13 +95,13 @@ $('#mainPage').on('pageshow', function() {
 //	papamamap.generate(mapServerList['mierune-normal']);
 	map = papamamap.map;
 	
-	window.alert('①');
+	window.alert('☆①');
 	
 	// 保育施設の読み込みとレイヤーの追加
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
 	}).then(function(){
-		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
+		//papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
 	});
 
 	// ポップアップ定義
