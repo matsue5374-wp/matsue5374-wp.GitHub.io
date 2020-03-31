@@ -157,19 +157,12 @@ Papamamap.prototype.loadNurseryFacilitiesJson = function(successFunc)
     $.getJSON(
         "data/nurseryFacilities.geojson",
         function(data) {
-            window.alert('☆③');
             successFunc(data);
-            window.alert('☆④');
             d.resolve();
-            window.alert('☆⑤');
-
         }
     ).fail(function(){
-        window.alert('☆⑥');
         console.log('station data load failed.');
-        window.alert('☆⑦');
         d.reject('load error.');
-        window.alert('☆⑧');
     });
     return d.promise();
 };
