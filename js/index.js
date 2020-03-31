@@ -94,7 +94,8 @@ $('#mainPage').on('pageshow', function() {
 	papamamap.generate(mapServerList['bing-road']);
 //	papamamap.generate(mapServerList['mierune-normal']);
 	map = papamamap.map;
-
+	
+	window.alert('☆');
 	// 保育施設の読み込みとレイヤーの追加
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
