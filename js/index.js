@@ -103,8 +103,6 @@ $('#mainPage').on('pageshow', function() {
 	}).then(function(){
 		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
 	});
-
-	window.alert('③○');
 	
 	// ポップアップ定義
 	var popup = new ol.Overlay({
@@ -112,35 +110,22 @@ $('#mainPage').on('pageshow', function() {
 	});
 	map.addOverlay(popup);
 	
-	window.alert('④');
-
 	// 背景地図一覧リストを設定する
 	for(var item in mapServerList) {
 		option = $('<option>').html(mapServerList[item].label).val(item);
 		$('#changeBaseMap').append(option);
 	}
 	
-	window.alert('⑤');
-
-	// 最寄駅セレクトボックスの生成
-    /* 未使用
-	mtl = new MoveToList();
-	mtl.loadStationJson().then(function() {
-		mtl.appendToMoveToListBox(moveToList);
-	}, function(){
-		mtl.loadStationJson().then(function() {
-			mtl.appendToMoveToListBox(moveToList);
-		});
-	});
-    */
-    
 	// 保育施設クリック時の挙動を定義
 	map.on('click', function(evt) {
+		window.alert('★①');
+
 		if ( $('#popup').is(':visible') ) {
 			// ポップアップを消す
 			$('#popup').hide();
 			return;
 		}
+		window.alert('★②');
 
 		// クリック位置の施設情報を取得
 		obj = map.forEachFeatureAtPixel(
@@ -149,7 +134,9 @@ $('#mainPage').on('pageshow', function() {
 				return {feature: feature, layer: layer};
 			}
 		);
-
+		
+		window.alert('★③');
+		
 		var feature = null;
 		var layer   = null;
 		if(obj !== undefined) {
