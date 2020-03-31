@@ -101,10 +101,10 @@ $('#mainPage').on('pageshow', function() {
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
 	}).then(function(){
-		// ☆papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
+		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
 	});
 
-	window.alert('③');
+	window.alert('③○');
 	
 	// ポップアップ定義
 	var popup = new ol.Overlay({
