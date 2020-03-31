@@ -95,14 +95,11 @@ $('#mainPage').on('pageshow', function() {
 //	papamamap.generate(mapServerList['mierune-normal']);
 	map = papamamap.map;
 	
-	window.alert('☆');
 	// 保育施設の読み込みとレイヤーの追加
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
-		window.alert('①');
 	}).then(function(){
 		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
-		window.alert('②');
 	});
 
 	// ポップアップ定義
@@ -110,7 +107,6 @@ $('#mainPage').on('pageshow', function() {
 		element: $('#popup')
 	});
 	map.addOverlay(popup);
-	window.alert('③');
 
 	// 背景地図一覧リストを設定する
 	for(var item in mapServerList) {
@@ -173,13 +169,16 @@ $('#mainPage').on('pageshow', function() {
 			if(type === undefined) {
 				return;
 			}
+			window.alert('☆①');
 			var geometry = feature.getGeometry();
 			var coord = geometry.getCoordinates();
 			popup.setPosition(coord);
+			window.alert('☆②');
 
 			// タイトル部
 			var title = papamamap.getPopupTitle(feature);
 			$("#popup-title").html(title);
+			window.alert('☆③');
 
 			// 内容部
 			papamamap.animatedMove(coord[0], coord[1], false);
@@ -188,6 +187,8 @@ $('#mainPage').on('pageshow', function() {
 			$('#popup').show();
 			view = map.getView();
 			view.setCenter(coord);
+			window.alert('☆④');
+
 		}
 	});
 
