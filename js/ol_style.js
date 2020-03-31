@@ -22,8 +22,8 @@ var ninkaStyleFunction = function(feature, resolution)
 	var style = [];
 	default
 	//if(facilityTypeName === "認可保育所") {
-		featureStyle = featureStyleList["default"];
-		style        = nurseryStyleFunction(feature, resolution, featureStyle);
+		var featureStyle = featureStyleList["default"];
+		var style        = nurseryStyleFunction(feature, resolution, featureStyle);
 	//}
 	return style;
 };
