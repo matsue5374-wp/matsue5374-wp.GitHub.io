@@ -25,54 +25,7 @@ Papamamap.prototype.generate = function(mapServerListItem)
                 name: 'layerTile',
                 source: mapServerListItem.source
             }),
-            // 中学校区レイヤーグループ
-            new ol.layer.Group({
-                layers:[
-                    // 中学校区ポリゴン
-                    new ol.layer.Vector({
-                        source: new ol.source.GeoJSON({
-                            projection: 'EPSG:3857',
-                            url: 'data/MiddleSchool.geojson'
-                        }),
-                        name: 'layerMiddleSchool',
-                        style: middleSchoolStyleFunction,
-                    }),
-                    // 中学校区位置
-                    new ol.layer.Vector({
-                        source: new ol.source.GeoJSON({
-                            projection: 'EPSG:3857',
-                            url: 'data/MiddleSchool_loc.geojson'
-                        }),
-                        name: 'layerMiddleSchoolLoc',
-                        style: middleSchoolStyleFunction,
-                    }),
-                ],
-                visible: false
-            }),
-            // 小学校区レイヤーグループ
-            new ol.layer.Group({
-                layers:[
-                     // 小学校区ポリゴン
-                     new ol.layer.Vector({
-                         source: new ol.source.GeoJSON({
-                             projection: 'EPSG:3857',
-                             url: 'data/Elementary.geojson'
-                         }),
-                         name: 'layerElementarySchool',
-                         style: elementaryStyleFunction,
-                     }),
-                     // 小学校区位置
-                     new ol.layer.Vector({
-                         source: new ol.source.GeoJSON({
-                             projection: 'EPSG:3857',
-                             url: 'data/Elementary_loc.geojson'
-                         }),
-                         name: 'layerElementarySchoolLoc',
-                         style: elementaryStyleFunction,
-                     })
-                ],
-                visible: false
-            }),
+
             // 距離同心円描画用レイヤー
             new ol.layer.Vector({
                  source: new ol.source.Vector(),
@@ -318,20 +271,8 @@ Papamamap.prototype.moveToSelectItem = function(mapServerListItem)
 Papamamap.prototype.getPopupTitle = function(feature)
 {
     // タイトル部
-    var title = '';
-    var type = feature.get('種別') ? feature.get('種別') : feature.get('Type');
-    title  = '[' + type + '] ';
-    var owner = feature.get('設置') ? feature.get('設置') : feature.get('Ownership');
-    if(owner !== undefined && owner !== null && owner !== "") {
-        title += ' [' + owner +']';
-    }
     var name = feature.get('名称') ? feature.get('名称') : feature.get('Name');
-    title += name;
-    url = feature.get('url');
-    if(url !== null && url !='') {
-        title = '<a href="' +url+ '" target="_blank">' + title + '</a>';
-    }
-    return title;
+    return name;
 };
 
 /**
@@ -343,120 +284,12 @@ Papamamap.prototype.getPopupContent = function(feature)
 {
     var content = '';
     content = '<table><tbody>';
-    var open  = feature.get('開園時間') ? feature.get('開園時間') : feature.get('Open');
-    var close = feature.get('終園時間') ? feature.get('終園時間') : feature.get('Close');
-    if (open != undefined && open !== null && open !== "" && close !== undefined && close !== null && close !== "") {
-        content += '<tr>';
-        content += '<th>時間</th>';
-        content += '<td>';
-        content += open + '〜' + close;
-        content += '</td>';
-        content += '</tr>';
-    }
-    var memo = feature.get('備考') ? feature.get('備考') : feature.get('Memo');
-    if (memo !== undefined && memo !== null) {
-        content += '<tr>';
-        content += '<th></th>';
-        content += '<td>' + memo + '</td>';
-        content += '</tr>';
-    }
-    var temp    = feature.get('一時') ? feature.get('一時') : feature.get('Temp');
-    var holiday = feature.get('休日') ? feature.get('休日') : feature.get('holiday');
-    var night   = feature.get('夜間') ? feature.get('夜間') : feature.get('Night');
-    var h24     = feature.get('H24') ? feature.get('H24') : feature.get('H24');
 
-    if( temp !== null || holiday !== null || night !== null || h24 !== null) {
-        content += '<tr>';
-        content += '<th></th>';
-        content += '<td>';
-        if (temp !== undefined && temp !== null) {
-            content += '一時保育 ';
-        }
-        if (holiday !== undefined && holiday !== null) {
-            content += '休日保育 ';
-        }
-        if (night !== undefined && night !== null) {
-            content += '夜間保育 ';
-        }
-        if (h24 !== undefined && h24 !== null) {
-            content += '24時間 ';
-        }
-        content += '</td>';
-        content += '</tr>';
-    }
-
-    var type = feature.get('種別') ? feature.get('種別') : feature.get('Type');
-    /* ◇
-    if(type == "認可外") {
-        content += '<tr>';
-        content += '<th>監督基準</th>';
-        content += '<td>';
-        var proof = feature.get('証明') ? feature.get('証明') : feature.get('Proof');
-        if (proof !== undefined && proof !== null) {
-            content += '証明書発行済<a href="http://www.city.sapporo.jp/kodomo/kosodate/ninkagai_shisetsu.html" target="_blank">(詳細)</a>';
-        }
-        content += '</td>';
-        content += '</tr>';
-    }
-    */
-
-    if(type == "認可保育所") {
-        content += '<tr>';
-        content += '<th>欠員</th>';
-        content += '<td>';
-        var vacancy = feature.get('Vacancy') ? feature.get('Vacancy') : feature.get('Vacancy');
-        var vacancyDate = feature.get('VacancyDate');
-
-        if (vacancy !== undefined && vacancy !== null) {
-            /**content += '<a href="http://www.city.sapporo.jp/kodomo/kosodate/l4_01.html" target="_blank">空きあり</a>'; */
-            content += '<a href="http://www1.city.matsue.shimane.jp/kyouiku/hoiku/hoyoukodomo/hoikusho/H30nyusyokanouwaku.html" target="_blank">空きあり</a>';
-            if (vacancyDate !== undefined && vacancyDate !== null) {
-                content += "<br> " + vacancyDate;
-            }
-        } else {
-            if (vacancyDate !== undefined && vacancyDate !== null) {
-                content += vacancyDate;
-            }
-        }
-        content += '</td>';
-        content += '</tr>';
-    }
-
-    var ageS = feature.get('開始年齢') ? feature.get('開始年齢') : feature.get('AgeS');
-    var ageE = feature.get('終了年齢') ? feature.get('終了年齢') : feature.get('AgeE');
-    if (ageS !== undefined && ageS !== null && ageE !== undefined && ageE !== null) {
-        content += '<tr>';
-        content += '<th>年齢</th>';
-        content += '<td>' + ageS + '〜' + ageE + '</td>';
-        content += '</tr>';
-    }
-    var full = feature.get('定員') ? feature.get('定員') : feature.get('Full');
-    if (full !== undefined && full !== null) {
-        content += '<tr>';
-        content += '<th>定員</th>';
-        content += '<td>' + full + '人</td>';
-        content += '</tr>';
-    }
-    var tel = feature.get('TEL') ? feature.get('TEL') : feature.get('TEL');
-    if (tel !== undefined && tel !== null) {
-        content += '<tr>';
-        content += '<th>TEL</th>';
-        content += '<td>' + tel + '</td>';
-        content += '</tr>';
-    }
-    var add1 = feature.get('住所１') ? feature.get('住所１') : feature.get('Add1');
-    var add2 = feature.get('住所２') ? feature.get('住所２') : feature.get('Add2');
-    if (add1 !== undefined && add2 !== undefined) {
+    var add1 = feature.get('住所') ? feature.get('住所') : feature.get('Add1');
+    if (add1 !== undefined ) {
         content += '<tr>';
         content += '<th>住所</th>';
-        content += '<td>' + add1 + add2 +'</td>';
-        content += '</tr>';
-    }
-    var owner = feature.get('設置者') ? feature.get('設置者') : feature.get('Owner');
-    if (owner !== undefined && owner !== null) {
-        content += '<tr>';
-        content += '<th>設置者</th>';
-        content += '<td>' + owner + '</td>';
+        content += '<td>' + add1 +'</td>';
         content += '</tr>';
     }
     content += '</tbody></table>';
