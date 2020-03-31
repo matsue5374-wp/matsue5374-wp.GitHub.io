@@ -10,6 +10,19 @@
 { "type": "Feature", "properties": { "SID": 1005, "Name": "本谷東側ごみ集積所横", "Label": "本谷東側ごみ集積所横", "Add1": "秋鹿町", "Y": 35.488194, "X": 132.953833}, "geometry": { "type": "Point", "coordinates": [ 132.953833, 35.488194 ] } },
 { "type": "Feature", "properties": { "SID": 1006, "Name": "中組地区ごみ集積所横", "Label": "中組地区ごみ集積所横", "Add1": "秋鹿町", "Y": 35.496889, "X": 132.950278}, "geometry": { "type": "Point", "coordinates": [ 132.950278, 35.496889 ] } },
 { "type": "Feature", "properties": { "SID": 1007, "Name": "山中リサイクルステーション", "Label": "山中リサイクルステーション", "Add1": "秋鹿町１９９８", "Y": 35.507722, "X": 132.941611}, "geometry": { "type": "Point", "coordinates": [ 132.941611, 35.507722 ] } },
-{ "type": "Feature", "properties": { "SID": 1008, "Name": "六坊リサイクルステーション", "Label": "六坊リサイクルステーション", "Add1": "秋鹿町", "Y": 35.513056, "X": 132.941083}, "geometry": { "type": "Point", "coordinates": [ 132.941083, 35.513056 ] } }
+{ "type": "Feature", "properties": { "SID": 1008, "Name": "六坊リサイクルステーション", "Label": "六坊リサイクルステーション", "Add1": "秋鹿町", "Y": 35.513056, "X": 132.941083}, "geometry": { "type": "Point", "coordinates": [ 132.941083, 35.513056 ] } },
+{ "type": "Feature", "properties": { "SID": 1009, "Name": "大垣中谷入口ごみ集積所横", "Label": "大垣中谷入口ごみ集積所横", "Add1": "大垣町１０８７", "Y": 35.472694, "X": 132.933639}, "geometry": { "type": "Point", "coordinates": [ 132.933639, 35.472694 ] } },
+{ "type": "Feature", "properties": { "SID": 1010, "Name": "円木池下ごみ集積所横", "Label": "円木池下ごみ集積所横", "Add1": "大垣町２１７", "Y": 35.479694, "X": 132.942167}, "geometry": { "type": "Point", "coordinates": [ 132.942167, 35.479694 ] } },
+{ "type": "Feature", "properties": { "SID": 1011, "Name": "上寄公民館", "Label": "上寄公民館", "Add1": "大垣町１６８５−３", "Y": 35.481028, "X": 132.927194}, "geometry": { "type": "Point", "coordinates": [ 132.927194, 35.481028 ] } },
+{ "type": "Feature", "properties": { "SID": 1012, "Name": "秋鹿公民館", "Label": "秋鹿公民館", "Add1": "岡本町７０", "Y": 35.476111, "X": 132.949389}, "geometry": { "type": "Point", "coordinates": [ 132.949389, 35.476111 ] } },
+{ "type": "Feature", "properties": { "SID": 1013, "Name": "岡本町上岡地区", "Label": "岡本町上岡地区", "Add1": "岡本町", "Y": 35.489306, "X": 132.945361}, "geometry": { "type": "Point", "coordinates": [ 132.945361, 35.489306 ] } },
+{ "type": "Feature", "properties": { "SID": 1014, "Name": "下岡会館奥ごみ集積所横", "Label": "下岡会館奥ごみ集積所横", "Add1": "岡本町９７０", "Y": 35.4812447, "X": 132.9480446}, "geometry": { "type": "Point", "coordinates": [ 132.9480446, 35.4812447 ] } },
+{ "type": "Feature", "properties": { "SID": 1015, "Name": "朝酌公会堂", "Label": "朝酌公会堂", "Add1": "朝酌町８９−２", "Y": 35.464278, "X": 133.103861}, "geometry": { "type": "Point", "coordinates": [ 133.103861, 35.464278 ] } },
+{ "type": "Feature", "properties": { "SID": 1016, "Name": "矢田消防機庫横", "Label": "矢田消防機庫横", "Add1": "朝酌町１３８９", "Y": 35.451250, "X": 133.106306}, "geometry": { "type": "Point", "coordinates": [ 133.106306, 35.451250 ] } },
+{ "type": "Feature", "properties": { "SID": 1017, "Name": "大井市営バス停付近ごみ集積所横", "Label": "大井市営バス停付近ごみ集積所横", "Add1": "大井町", "Y": 35.462028, "X": 133.123278}, "geometry": { "type": "Point", "coordinates": [ 133.123278, 35.462028 ] } },
+{ "type": "Feature", "properties": { "SID": 1018, "Name": "大海崎市営バス廻し場", "Label": "大海崎市営バス廻し場", "Add1": "大海崎町", "Y": 35.470250, "X": 133.138333}, "geometry": { "type": "Point", "coordinates": [ 133.138333, 35.470250 ] } },
+{ "type": "Feature", "properties": { "SID": 1019, "Name": "西尾市営バス廻し場", "Label": "西尾市営バス廻し場", "Add1": "西尾町４７７−１ オリオン工芸社", "Y": 35.469944, "X": 133.088806}, "geometry": { "type": "Point", "coordinates": [ 133.088806, 35.469944 ] } },
+{ "type": "Feature", "properties": { "SID": 1020, "Name": "太陽団地入口", "Label": "太陽団地入口", "Add1": "西尾町", "Y": 35.469750, "X": 133.085361}, "geometry": { "type": "Point", "coordinates": [ 133.085361, 35.469750 ] } },
+{ "type": "Feature", "properties": { "SID": 1021, "Name": "福富町ごみ集積所横", "Label": "福富町ごみ集積所横", "Add1": "福富町", "Y": 35.452833, "X": 133.116750}, "geometry": { "type": "Point", "coordinates": [ 133.116750, 35.452833 ] } }
 ]
 }
