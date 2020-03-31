@@ -109,29 +109,7 @@ Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
         this.map.removeLayer(this.map.getLayers().item(4));
         this.map.removeLayer(this.map.getLayers().item(4));
     }
-
-    // 幼稚園
-    this.map.addLayer(
-        new ol.layer.Vector({
-            source: new ol.source.GeoJSON({
-                projection: 'EPSG:3857',
-                object: facilitiesData
-            }),
-            name: 'layerKindergarten',
-            style: kindergartenStyleFunction
-        })
-    );
-    // 認可外
-    this.map.addLayer(
-        new ol.layer.Vector({
-            source: new ol.source.GeoJSON({
-                projection: 'EPSG:3857',
-                object: facilitiesData
-            }),
-            name: 'layerNinkagai',
-            style: ninkagaiStyleFunction
-        })
-    );
+    
     // 認可
     this.map.addLayer(
         new ol.layer.Vector({
