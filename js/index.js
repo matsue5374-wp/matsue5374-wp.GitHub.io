@@ -104,17 +104,23 @@ $('#mainPage').on('pageshow', function() {
 		// ☆papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
 	});
 
+	window.alert('③');
+	
 	// ポップアップ定義
 	var popup = new ol.Overlay({
 		element: $('#popup')
 	});
 	map.addOverlay(popup);
+	
+	window.alert('④');
 
 	// 背景地図一覧リストを設定する
 	for(var item in mapServerList) {
 		option = $('<option>').html(mapServerList[item].label).val(item);
 		$('#changeBaseMap').append(option);
 	}
+	
+	window.alert('⑤');
 
 	// 最寄駅セレクトボックスの生成
     /* 未使用
@@ -186,7 +192,7 @@ $('#mainPage').on('pageshow', function() {
 			$('#popup').show();
 			view = map.getView();
 			view.setCenter(coord);
-			window.alert('☆④');
+			window.alert('⑤');
 
 		}
 	});
