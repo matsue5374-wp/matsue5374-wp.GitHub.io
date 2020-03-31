@@ -95,6 +95,8 @@ $('#mainPage').on('pageshow', function() {
 //	papamamap.generate(mapServerList['mierune-normal']);
 	map = papamamap.map;
 	
+	window.alert('①');
+	
 	// 保育施設の読み込みとレイヤーの追加
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
@@ -169,16 +171,13 @@ $('#mainPage').on('pageshow', function() {
 			if(type === undefined) {
 				return;
 			}
-			window.alert('☆①');
 			var geometry = feature.getGeometry();
 			var coord = geometry.getCoordinates();
 			popup.setPosition(coord);
-			window.alert('☆②');
 
 			// タイトル部
 			var title = papamamap.getPopupTitle(feature);
 			$("#popup-title").html(title);
-			window.alert('☆③');
 
 			// 内容部
 			papamamap.animatedMove(coord[0], coord[1], false);
