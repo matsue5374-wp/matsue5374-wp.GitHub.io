@@ -129,7 +129,6 @@ Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
  */
 Papamamap.prototype.loadNurseryFacilitiesJson = function(successFunc)
 {
-	window.alert('☆②');
 
     var d = new $.Deferred();
     $.getJSON(
