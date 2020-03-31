@@ -98,8 +98,10 @@ $('#mainPage').on('pageshow', function() {
 	// 保育施設の読み込みとレイヤーの追加
 	papamamap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
+		window.alert('①');
 	}).then(function(){
 		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
+		window.alert('②');
 	});
 
 	// ポップアップ定義
@@ -107,6 +109,7 @@ $('#mainPage').on('pageshow', function() {
 		element: $('#popup')
 	});
 	map.addOverlay(popup);
+	window.alert('③');
 
 	// 背景地図一覧リストを設定する
 	for(var item in mapServerList) {
@@ -125,7 +128,7 @@ $('#mainPage').on('pageshow', function() {
 		});
 	});
     */
-
+    
 	// 保育施設クリック時の挙動を定義
 	map.on('click', function(evt) {
 		if ( $('#popup').is(':visible') ) {
