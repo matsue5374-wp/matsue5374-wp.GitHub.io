@@ -118,14 +118,13 @@ $('#mainPage').on('pageshow', function() {
 	
 	// 保育施設クリック時の挙動を定義
 	map.on('click', function(evt) {
-		window.alert('★①');
+		window.alert('☆①');
 
 		if ( $('#popup').is(':visible') ) {
 			// ポップアップを消す
 			$('#popup').hide();
 			return;
 		}
-		window.alert('★②');
 
 		// クリック位置の施設情報を取得
 		obj = map.forEachFeatureAtPixel(
@@ -134,8 +133,6 @@ $('#mainPage').on('pageshow', function() {
 				return {feature: feature, layer: layer};
 			}
 		);
-		
-		window.alert('★③');
 		
 		var feature = null;
 		var layer   = null;
@@ -160,17 +157,23 @@ $('#mainPage').on('pageshow', function() {
 
 		// クリックした場所に保育施設がある場合、ポップアップダイアログを出力する
 		if (feature && "Point" == feature.getGeometry().getType()) {
-			var type = feature.get('種別') ? feature.get('種別') :  feature.get('Type');
-			if(type === undefined) {
-				return;
-			}
+		
+			// var type = feature.get('種別') ? feature.get('種別') :  feature.get('Type');
+			// if(type === undefined) {
+			// 	return;
+			// }
+			
+			window.alert('☆②');
+
 			var geometry = feature.getGeometry();
 			var coord = geometry.getCoordinates();
 			popup.setPosition(coord);
-
+			
+			window.alert('☆③');
 			// タイトル部
 			var title = papamamap.getPopupTitle(feature);
 			$("#popup-title").html(title);
+			window.alert('☆④');
 
 			// 内容部
 			papamamap.animatedMove(coord[0], coord[1], false);
@@ -179,7 +182,7 @@ $('#mainPage').on('pageshow', function() {
 			$('#popup').show();
 			view = map.getView();
 			view.setCenter(coord);
-			window.alert('⑤');
+			window.alert('☆⑤');
 
 		}
 	});
