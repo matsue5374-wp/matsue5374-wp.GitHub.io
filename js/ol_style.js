@@ -19,7 +19,7 @@ var ninkaStyleFunction = function(feature, resolution)
 {
 	var style = [];
 
-	style = nurseryStyleFunction(feature, resolution, { color: 'rgba(153, 153, 153, 1)', img: 'image/018.png'});
+	style = nurseryStyleFunction(feature, resolution, { color: 'rgba(153, 153, 153, 1)', img: 'image/school.png'});
 	return style;
 };
 
