@@ -3,6 +3,13 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 
 "features": [
-{ "type": "Feature", "properties": { "HID": 1001, "Name": "城東保育所", "Label": "城東保育所", "Add1": "学園一丁目10-12", "Y": 35.47951700, "X": 133.06725000 }, "geometry": { "type": "Point", "coordinates": [ 133.06725000, 35.47951700 ] } }
+{ "type": "Feature", "properties": { "SID": 1001, "Name": "元秋鹿タクシー前ごみ集積所横", "Label": "元秋鹿タクシー前ごみ集積所横", "Add1": "秋鹿町３３６４", "Y": 35.477833, "X": 132.958083}, "geometry": { "type": "Point", "coordinates": [ 132.958083, 35.477833 ] } },
+{ "type": "Feature", "properties": { "SID": 1002, "Name": "井神ごみ集積所横", "Label": "井神ごみ集積所横", "Add1": "秋鹿町", "Y": 35.488500, "X": 132.959667}, "geometry": { "type": "Point", "coordinates": [ 132.959667, 35.488500 ] } },
+{ "type": "Feature", "properties": { "SID": 1003, "Name": "旧中島小学校前ごみ集積所横", "Label": "旧中島小学校前ごみ集積所横", "Add1": "秋鹿町", "Y": 35.505528, "X": 132.946639}, "geometry": { "type": "Point", "coordinates": [ 132.946639, 35.505528 ] } },
+{ "type": "Feature", "properties": { "SID": 1004, "Name": "芦尾地区ごみ集積所横", "Label": "芦尾地区ごみ集積所横", "Add1": "秋鹿町１６０６−２", "Y": 35.515611, "X": 132.935250}, "geometry": { "type": "Point", "coordinates": [ 132.935250, 35.515611 ] } },
+{ "type": "Feature", "properties": { "SID": 1005, "Name": "本谷東側ごみ集積所横", "Label": "本谷東側ごみ集積所横", "Add1": "秋鹿町", "Y": 35.488194, "X": 132.953833}, "geometry": { "type": "Point", "coordinates": [ 132.953833, 35.488194 ] } },
+{ "type": "Feature", "properties": { "SID": 1006, "Name": "中組地区ごみ集積所横", "Label": "中組地区ごみ集積所横", "Add1": "秋鹿町", "Y": 35.496889, "X": 132.950278}, "geometry": { "type": "Point", "coordinates": [ 132.950278, 35.496889 ] } },
+{ "type": "Feature", "properties": { "SID": 1007, "Name": "山中リサイクルステーション", "Label": "山中リサイクルステーション", "Add1": "秋鹿町１９９８", "Y": 35.507722, "X": 132.941611}, "geometry": { "type": "Point", "coordinates": [ 132.941611, 35.507722 ] } },
+{ "type": "Feature", "properties": { "SID": 1008, "Name": "六坊リサイクルステーション", "Label": "六坊リサイクルステーション", "Add1": "秋鹿町", "Y": 35.513056, "X": 132.941083}, "geometry": { "type": "Point", "coordinates": [ 132.941083, 35.513056 ] } }
 ]
 }
