@@ -18,12 +18,11 @@ var featureStyleList = {
 var ninkaStyleFunction = function(feature, resolution)
 {
 	var facilityTypeName = feature.get('種別') ? feature.get('種別') : feature.get('Type');
-	//var style = [];
 	var style = [];
-	default
+
 	//if(facilityTypeName === "認可保育所") {
-		var featureStyle = featureStyleList["default"];
-		var style        = nurseryStyleFunction(feature, resolution, featureStyle);
+		var featureStyle = { color: 'rgba(153, 153, 153, 1)', img: 'image/018.png'};
+		style        = nurseryStyleFunction(feature, resolution, featureStyle);
 	//}
 	return style;
 };
