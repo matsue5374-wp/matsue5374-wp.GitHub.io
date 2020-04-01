@@ -4,7 +4,7 @@
  * @param ol.Map map OpenLayers3 map object
  *
  */
-window.rcystmap = function() {
+window.Rcystmap = function() {
     this.map = null;
     this.centerLatOffsetPixel = 75;
     this.viewCenter = [];
@@ -16,7 +16,7 @@ window.rcystmap = function() {
  * @param  {[type]} mapServerListItem [description]
  * @return {[type]}                   [description]
  */
-rcystmap.prototype.generate = function(mapServerListItem)
+Rcystmap.prototype.generate = function(mapServerListItem)
 {
     this.map = new ol.Map({
         layers: [
@@ -58,7 +58,7 @@ rcystmap.prototype.generate = function(mapServerListItem)
  * @param  {[type]} visible   [description]
  * @return {[type]}           [description]
  */
-rcystmap.prototype.switchLayer = function(layerName, visible)
+Rcystmap.prototype.switchLayer = function(layerName, visible)
 {
     this.map.getLayers().forEach(function(layer) {
         if (layer.get('name') == layerName) {
@@ -73,7 +73,7 @@ rcystmap.prototype.switchLayer = function(layerName, visible)
  * 座標参照系が変換済みの値を使うには false,
  * 変換前の値を使うには true を指定
  */
-rcystmap.prototype.animatedMove = function(lon, lat, isTransform)
+Rcystmap.prototype.animatedMove = function(lon, lat, isTransform)
 {
     // グローバル変数 map から view を取得する
     view = this.map.getView();
@@ -102,7 +102,7 @@ rcystmap.prototype.animatedMove = function(lon, lat, isTransform)
  *
  * @param {[type]} facilitiesData [description]
  */
-rcystmap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
+Rcystmap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
 {
     if(this.map.getLayers().getLength() >= 4) {
         this.map.removeLayer(this.map.getLayers().item(4));
@@ -127,7 +127,7 @@ rcystmap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
  * 保育施設データの読み込みを行う
  * @return {[type]} [description]
  */
-rcystmap.prototype.loadNurseryFacilitiesJson = function(successFunc)
+Rcystmap.prototype.loadNurseryFacilitiesJson = function(successFunc)
 {
 
     var d = new $.Deferred();
@@ -150,7 +150,7 @@ rcystmap.prototype.loadNurseryFacilitiesJson = function(successFunc)
  * @param  {[type]} opacity           [description]
  * @return {[type]}                   [description]
  */
-rcystmap.prototype.changeMapServer = function(mapServerListItem, opacity)
+Rcystmap.prototype.changeMapServer = function(mapServerListItem, opacity)
 {
     this.map.removeLayer(this.map.getLayers().item(0));
     source_type = mapServerListItem.source_type;
@@ -177,7 +177,7 @@ rcystmap.prototype.changeMapServer = function(mapServerListItem, opacity)
  * @param  {[type]} layerName [description]
  * @return {[type]}           [description]
  */
-rcystmap.prototype.getLayer = function(layerName)
+Rcystmap.prototype.getLayer = function(layerName)
 {
     result = null;
     this.map.getLayers().forEach(function(layer) {
@@ -195,7 +195,7 @@ rcystmap.prototype.getLayer = function(layerName)
  * @param  {[type]} mapServerListItem [description]
  * @return {[type]}                   [description]
  */
-rcystmap.prototype.moveToSelectItem = function(mapServerListItem)
+Rcystmap.prototype.moveToSelectItem = function(mapServerListItem)
 {
     if(mapServerListItem.coordinates !== undefined) {
         // 区の境界線に合わせて画面表示
@@ -247,7 +247,7 @@ rcystmap.prototype.moveToSelectItem = function(mapServerListItem)
  * @param  {[type]} feature [description]
  * @return {[type]}         [description]
  */
-rcystmap.prototype.getPopupTitle = function(feature)
+Rcystmap.prototype.getPopupTitle = function(feature)
 {
     // タイトル部
     var name = feature.get('名称') ? feature.get('名称') : feature.get('Name');
@@ -259,7 +259,7 @@ rcystmap.prototype.getPopupTitle = function(feature)
  * @param  {[type]} feature [description]
  * @return {[type]}         [description]
  */
-rcystmap.prototype.getPopupContent = function(feature)
+Rcystmap.prototype.getPopupContent = function(feature)
 {
     var content = '';
     content = '<table><tbody>';
@@ -282,7 +282,7 @@ rcystmap.prototype.getPopupContent = function(feature)
  * @param  {[type]} moveToPixel [description]
  * @return {[type]}             [description]
  */
-rcystmap.prototype.clearCenterCircle = function()
+Rcystmap.prototype.clearCenterCircle = function()
 {
     var layer = this.getLayer(this.getLayerName("Circle"));
     var source = layer.getSource();
@@ -296,7 +296,7 @@ rcystmap.prototype.clearCenterCircle = function()
  * @param  {[type]} moveToPixel [description]
  * @return {[type]}             [description]
  */
-rcystmap.prototype.drawCenterCircle = function(radius, moveToPixel)
+Rcystmap.prototype.drawCenterCircle = function(radius, moveToPixel)
 {
     if(moveToPixel === undefined || moveToPixel === null) {
         moveToPixel = 0;
@@ -362,7 +362,7 @@ rcystmap.prototype.drawCenterCircle = function(radius, moveToPixel)
  * @param  {[type]} cbName [description]
  * @return {[type]}        [description]
  */
-rcystmap.prototype.getLayerName = function(cbName)
+Rcystmap.prototype.getLayerName = function(cbName)
 {
     return 'layer' + cbName;
 };
@@ -373,7 +373,7 @@ rcystmap.prototype.getLayerName = function(cbName)
  * @param  {[type]} visible   [description]
  * @return {[type]}           [description]
  */
-rcystmap.prototype.switchLayer = function(layerName, visible) {
+Rcystmap.prototype.switchLayer = function(layerName, visible) {
     var _layerName = this.getLayerName(layerName.substr(2));
     this.map.getLayers().forEach(function(layer) {
         if (layer.get('name') == _layerName) {
