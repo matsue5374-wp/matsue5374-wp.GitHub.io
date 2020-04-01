@@ -89,17 +89,17 @@ $('#mainPage').on('pageshow', function() {
 	resizeMapDiv();
 
 	// 地図レイヤー定義
-	var papamamap = new Papamamap();
-	papamamap.viewCenter = init_center_coords;
-	papamamap.generate(mapServerList['bing-road']);
-//	papamamap.generate(mapServerList['mierune-normal']);
-	map = papamamap.map;
+	var rcystmap = new Rcystmap();
+	rcystmap.viewCenter = init_center_coords;
+	rcystmap.generate(mapServerList['bing-road']);
+//	rcystmap.generate(mapServerList['mierune-normal']);
+	map = rcystmap.map;
 	
 	// 保育施設の読み込みとレイヤーの追加
-	papamamap.loadNurseryFacilitiesJson(function(data){
+	rcystmap.loadNurseryFacilitiesJson(function(data){
 		nurseryFacilities = data;
 	}).then(function(){
-		papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
+		rcystmap.addNurseryFacilitiesLayer(nurseryFacilities);
 	});
 	
 	// ポップアップ定義
@@ -141,7 +141,7 @@ $('#mainPage').on('pageshow', function() {
 		if (feature === null) {
 			coord = map.getCoordinateFromPixel(evt.pixel);
 			view = map.getView();
-			papamamap.animatedMove(coord[0], coord[1], false);
+			rcystmap.animatedMove(coord[0], coord[1], false);
 			view.setCenter(coord);
 		}
 
@@ -160,12 +160,12 @@ $('#mainPage').on('pageshow', function() {
 			popup.setPosition(coord);
 			
 			// タイトル部
-			var title = papamamap.getPopupTitle(feature);
+			var title = rcystmap.getPopupTitle(feature);
 			$("#popup-title").html(title);
 
 			// 内容部
-			papamamap.animatedMove(coord[0], coord[1], false);
-			var content = papamamap.getPopupContent(feature);
+			rcystmap.animatedMove(coord[0], coord[1], false);
+			var content = rcystmap.getPopupContent(feature);
 			$("#popup-content").html(content);
 			$('#popup').show();
 			view = map.getView();
@@ -179,7 +179,7 @@ $('#mainPage').on('pageshow', function() {
 		// $('#marker').hide();
 
 		// 指定した最寄り駅に移動
-		papamamap.moveToSelectItem(moveToList[$(this).val()]);
+		rcystmap.moveToSelectItem(moveToList[$(this).val()]);
 
 		// 地図上にマーカーを設定する
 		var lon = moveToList[$(this).val()].lon;
@@ -218,7 +218,7 @@ $('#mainPage').on('pageshow', function() {
 		if($(this).val() === "背景") {
 			$(this).val($(this).prop("selectedIndex", 1).val());
 		}
-		papamamap.changeMapServer(
+		rcystmap.changeMapServer(
 			mapServerList[$(this).val()], $('#changeOpacity option:selected').val()
 			);
 	});
@@ -250,9 +250,9 @@ $('#mainPage').on('pageshow', function() {
 	 */
 	function updateLayerStatus(checkObj)
 	{
-		papamamap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
-		papamamap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
-		papamamap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
+		rcystmap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
+		rcystmap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
+		rcystmap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
 		$('#cbNinka').prop('checked', checkObj.ninka).checkboxradio('refresh');
 		$('#cbNinkagai').prop('checked', checkObj.ninkagai).checkboxradio('refresh');
 		$('#cbKindergarten').prop('checked', checkObj.kindergarten).checkboxradio('refresh');
@@ -267,7 +267,7 @@ $('#mainPage').on('pageshow', function() {
 	function drawCenterCircle(radius)
 	{
 		if($('#cbDisplayCircle').prop('checked')) {
-			papamamap.drawCenterCircle(radius);
+			rcystmap.drawCenterCircle(radius);
 
 			$('#center_markerTitle').hide();
 			$('#center_marker').hide();
@@ -301,7 +301,7 @@ $('#mainPage').on('pageshow', function() {
 	 */
 	function clearCenterCircle()
 	{
-		papamamap.clearCenterCircle();
+		rcystmap.clearCenterCircle();
 		$('#center_markerTitle').hide();
 		$('#center_marker').hide();
 		$('#changeCircleRadius').val('').selectmenu('refresh');
