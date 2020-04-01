@@ -8,7 +8,7 @@ var ninkaStyleFunction = function(feature, resolution)
 {
 	var style = [];
 
-	style = nurseryStyleFunction(feature, resolution, { color: 'rgba(153, 153, 153, 1)', img: 'image/school.png'});
+	style = recyclstStyleFunction(feature, resolution, { color: 'rgba(153, 153, 153, 1)', img: 'image/school.png'});
 	return style;
 };
 
@@ -20,7 +20,7 @@ var ninkaStyleFunction = function(feature, resolution)
  * @param  {[type]} featureStyle [description]
  * @return {[type]}              [description]
  */
-var nurseryStyleFunction = function(feature, resolution, featureStyle) {
+var recyclstStyleFunction = function(feature, resolution, featureStyle) {
 	var radius = 15;
 	var background = new ol.style.Circle({
 		radius: radius,
