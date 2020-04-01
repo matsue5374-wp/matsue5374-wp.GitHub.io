@@ -102,7 +102,7 @@ Rcystmap.prototype.animatedMove = function(lon, lat, isTransform)
  *
  * @param {[type]} facilitiesData [description]
  */
-Rcystmap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
+Rcystmap.prototype.addRecycleStationsLayer = function(facilitiesData)
 {
     if(this.map.getLayers().getLength() >= 4) {
         this.map.removeLayer(this.map.getLayers().item(4));
@@ -127,12 +127,12 @@ Rcystmap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
  * 保育施設データの読み込みを行う
  * @return {[type]} [description]
  */
-Rcystmap.prototype.loadNurseryFacilitiesJson = function(successFunc)
+Rcystmap.prototype.loadRecycleStationsJson = function(successFunc)
 {
 
     var d = new $.Deferred();
     $.getJSON(
-        "data/nurseryFacilities.geojson",
+        "data/recycleStations.geojson",
         function(data) {
             successFunc(data);
             d.resolve();
@@ -341,7 +341,7 @@ Rcystmap.prototype.drawCenterCircle = function(radius, moveToPixel)
     view.fitExtent(extent, [size, size]);
 
     // 円の内部に施設が含まれるかチェック
-    _features = nurseryFacilities.features.filter(function(item,idx){
+    _features = recycleStations.features.filter(function(item,idx){
         coordinate = ol.proj.transform(item.geometry.coordinates, 'EPSG:4326', 'EPSG:3857');
         if(ol.extent.containsCoordinate(extent, coordinate))
             return true;
