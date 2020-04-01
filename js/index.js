@@ -13,8 +13,8 @@ var bing_api_key = 'AgLf0SuOSdS4m_KaWrFtqI4hy1GdVNs8c39CQUM2gGBzgfPax77xUdL_cPlc
 // map
 var map;
 
-// 保育施設JSON格納用オブジェクト
-var nurseryFacilities = {};
+// リサイクルステーションJSON格納用オブジェクト
+var recycleStations = {};
 
 // 中心座標変更セレクトボックス用データ
 var moveToList = [];
@@ -96,10 +96,10 @@ $('#mainPage').on('pageshow', function() {
 	map = rcystmap.map;
 	
 	// 保育施設の読み込みとレイヤーの追加
-	rcystmap.loadNurseryFacilitiesJson(function(data){
-		nurseryFacilities = data;
+	rcystmap.loadRecycleStationsJson(function(data){
+		recycleStations = data;
 	}).then(function(){
-		rcystmap.addNurseryFacilitiesLayer(nurseryFacilities);
+		rcystmap.addRecycleStationsLayer(recycleStations);
 	});
 	
 	// ポップアップ定義
